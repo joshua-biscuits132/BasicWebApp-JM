@@ -85,6 +85,28 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		exampleVariable2 = 0;
 		exampleVariable3 = 0;
 	}
+	
+	function smileDisplay
+	{
+		exampleVariable1 = parseFloat(document.getElementById("firstInputBox").value);
+		exampleVariable2 = parseFloat(document.getElementById("secondInputBox").value);
+
+		<!-- keeps looping the operation of adding smileys and frownies until value is met
+		for(let smiley = 0; smiley < exampleVariable1; smiley++)
+		{
+			var smileyImage = document.createElement("img");
+			smileyImage.src = "https://i.imgur.com/jctdkSS.png";
+			document.getElementById("header3").appendChild(smileyImage);
+		}
+		for(let frowny = 0; frowny < exampleVariable2; frowny++)
+		{
+			var frownyImage = document.createElement("img");
+			frownyImage.src = "https://i.imgur.com/dVUqrST.png";
+			document.getElementById("header3").appendChild(frownyImage);
+		}
+		document.getElementById("WOW!").innerHTML = "You inserted" + exampleVariable1 + "smiley faces and " + exampleVariable2 + "frowny faces!";
+
+	}
 </script>
   
   
@@ -160,11 +182,32 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
   <a href="#finalpage" onclick="exampleFunction1();" class="w3-btn w3-grey">Button 1</a>
   <a href="#finalpage" onclick="exampleFunction2();" class="w3-btn w3-grey">Button 2</a>
   <a href="#finalpage" onclick="exampleFunction3();" class="w3-btn w3-grey">Button 3</a>
+  <a href = "#altpage" onclick="smileyDisplay();" class="w3-btn w3-grey">Special Button</a>a>
     
   </center>
 </div>  
   
-  
+
+
+<!--This is the 4th Subpage.-->
+<div id="three" class="page">
+	<!--Header-->
+	<div id="header3" class="w3-container w3-flat-carrot">
+		<h1>HOLY COW LOOK!/h1>
+	</div>
+
+	<!--Main content of the page.-->
+	
+	<center>
+	<div id="content3" class="w3-container">
+		<p id="WOW!">COOL</p>
+	</div>
+
+	<!--A link that runs a function when clicked and takes the user to a new page.-->
+	<a href="#altPage" onclick="resetVariables();" class"w3-btn w3-grey">Return to Home Page</a>
+	</center>
+</div>
+
   
 
 	  
