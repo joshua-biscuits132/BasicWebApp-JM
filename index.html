@@ -58,9 +58,11 @@
             if(selectedOption) {
                 var selectedValue = selectedOption.value;
 
-                if(selectedValue === "YES") {
+                if(selectedValue === "YES" || selectedValue === "NAH") {
                     // Increment the count if the user selects "YES"
-                    yesCount++;
+                    if(selectedValue === "YES") {
+                        yesCount++;
+                    }
                     window.location.href = "#YES"; // Redirect to the cat question page
                 } else {
                     window.location.href = "NO.html"; // Redirect to a page for non-Star Wars fans
@@ -128,25 +130,8 @@
     </div>
 
      <div id="NAH" class="page">
-        <div id="yesPage" class="w3-container w3-flat-midnight-blue">
+        <div id="nahPage" class="w3-container w3-flat-midnight-blue">
             <h1>Good Choice!</h1>
         </div>
 
-        <form action="/action_page.php">
-            <p>Would you save a cat from a burning building?</p>
-            <input type="radio" id="yes2" name="save_cat" value="YES">
-            <label for="yes2">YES</label><br>
-            <input type="radio" id="nah2" name="save_cat" value="NO">
-            <label for="nah2">NO</label><br>
-            
-            <input type="button" value="Submit" onclick="askAnotherQuestion()">
-        </form>
-    </div>
-
-    <script>
-        // Update the count display
-        document.getElementById("yesCountDisplay").textContent = yesCount;
-    </script>
-
-</body>
-</html>
+        <
