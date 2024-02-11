@@ -27,7 +27,6 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="stylesheet" href="w3.css">
     <link rel="stylesheet" href="w3-colors-flat.css">
-  
     <style>  
         .body {
             margin: 0 auto;
@@ -63,17 +62,20 @@
                     // Increment the count if the user selects "YES"
                     if(selectedValue === "YES") {
                         yesCount++;
-                        document.getElementById("yesCountDisplay").textContent = yesCount;
                     }
                     window.location.href = "#YES"; // Redirect to the cat question page
                 } else {
                     window.location.href = "NO.html"; // Redirect to a page for non-Star Wars fans
                 }
-    
+            } else {
+                alert("Please select an option.");
+            }
         }
 
-
-      
+        function askAnotherQuestion() {
+            alert("Here's another question for you!"); // You can replace this alert with any other UI element or action
+            // Add more code here to ask another question or perform another action
+        }
     </script>
 </head>
 
@@ -123,13 +125,13 @@
             <input type="radio" id="nah2" name="save_cat" value="NO">
             <label for="nah2">NO</label><br>
             
-            <input type="button" value="Submit" onclick="window.location.href = '#THIRD'">
+            <input type="button" value="Submit" onclick="askAnotherQuestion()">
         </form>
     </div>
 
      <div id="NAH" class="page">
         <div id="nahPage" class="w3-container w3-flat-midnight-blue">
-            <h1>AH HECK NAH</h1>
+            <h1>Good Choice!</h1>
         </div>
 
         <form action="/action_page.php">
@@ -139,26 +141,6 @@
             <input type="radio" id="nah2" name="save_cat" value="NO">
             <label for="nah2">NO</label><br>
             
-            <input type="button" value="Submit" onclick="askSecondQuestion()">
-        </form>
-    </div>
-
-    <!--THIRD SUBPAGE-->
-    <div id="THIRD" class="page">
-        <div id="thirdPage" class="w3-container w3-flat-midnight-blue">
-            <h1>Question Three</h1>
-        </div>
-
-        <form action="/action_page.php">
-            <p>Would you do something?</p>
-            <input type="radio" id="yes3" name="question_three" value="YES">
-            <label for="yes3">YES</label><br>
-            <input type="radio" id="nah3" name="question_three" value="NO">
-            <label for="nah3">NO</label><br>
-            
             <input type="button" value="Submit" onclick="askAnotherQuestion()">
         </form>
     </div>
-    
-</body>
-</html>
