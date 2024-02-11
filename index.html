@@ -55,31 +55,30 @@
         var jediCount = 0;
         var sithCount = 0;
       
-        function jediAdd(){
+        function jediAdd() {
             jediCount = jediCount + 1 ; //increments the jedi count +1 for every user inputted "yes"
+            showResult();
 
         }
 
-        function sithAdd(){
+        function sithAdd() {
             sithCount = sithCount + 1; //increments the sith count +1 for every user inputted "no"
+            showResult();
 
         }
 
-        function showResult(){
-            var resultPage = document.getElementById("six");
-            var resultText= document.getElementById("result");
+       function showResult() {
+            var resultPage = document.getElementById("result");
+            var resultText = document.getElementById("result-text");
+        
+           if (jediCount > sithCount) {
+               resultText.textContent = "Yoy are a Jedi! You will defend the galaxy against the Sith and Galactic Empire!";
 
-            if (jediCount > sithCount) {
-                resultText.textContent = "You are a Jedi! You will defend the galaxy against the Sith and the Galactic Empire!";
-            } else if (sithCount > jediCount){
-                    resultText.textContent = "You are a Sith! You will rule the Galaxy and lay waste to the Republic!";
-                }
-
-            resultPage.style.left = "0vw";
-            resultPage.style.zIndex = "1";
-                }
-
-        showResult();
+           } else if (sithCount > jediCount) {
+               resultText.textContent = "You are a Sith! You will across the stars and destroy the Rebellion!"
+           }
+           resultPage.style.display = "block";
+       }
       
     </script>
 </head>
@@ -178,17 +177,18 @@
         </div>
    
     </div>
-
-    <!---SIXTH SUBPAGE--->
-    <div id="six" class="page">
-        div id="header7" class="w3-flat-midnight-blue"
-        <h1>RESULT</h1>
+<!---FINAL UNIQUE PAGE--->
+    <div id="result" class="w3-container w3-flat-midnight-blue">
+        <h1>RESULTS</h1>
     </div>
-
-    <div id="content" class="w3-content">
-        <p>id="result"</p>
+    <div id="content" class="w3-container">
+        <p id="result-text"></p>
     </div>
 </div>
+</body>
+</html>
+
+ 
  
 
                 
