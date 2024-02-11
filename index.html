@@ -122,10 +122,22 @@ function redirectToPage() {
 	
   <center>
 
+
+!--SECOND SUBPAGE-->
 <div id="YES" class="page">
 	<div id="yesPage" class="w3-container w3-flat-midnight-blue">
 		<h1>Good Choice!?</h1>
 	</div>
+
+<form action="/action_page.php">
+  <p>Would you save a cat, from a burning building??</p>
+  <input type="radio" id="yes" name="sw_fan" value="YES">
+  <label for="yes">YES</label><br>
+  <input type="radio" id="nah" name="sw_fan" value="NAH">
+  <label for="nah">NAH</label><br>
+  
+	<input type="submit" value="Submit" onclick="redirectToPage()>
+</form>
 
 	
 
