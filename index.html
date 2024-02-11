@@ -27,6 +27,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="stylesheet" href="w3.css">
     <link rel="stylesheet" href="w3-colors-flat.css">
+    <form action="js/feedback_submission.php" method="post">
     <style>  
         .body {
             margin: 0 auto;
@@ -210,7 +211,7 @@
             <h1>Feedback Form</h1>
         </div>
         <div id="content" class="w3-container">
-            <form action="feedback_submission.php" method="post">
+            <form action="js/feedback_submission.php" method="post">
                 <label for="feedback">Your Feedback:</label><br>
                 <textarea id="feedback" name="feedback" rows="4" cols=50"></textarea><br>
                 <input type="submit" value="Submit" onclick="returnToHome()">
