@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html>
-<!--The following code has been developed by students and/or researchers of the Freshman Research Initiative Maker Space Stream at The University of Texas at Austin. This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.
+<head>
+    <!--The following code has been developed by students and/or researchers of the Freshman Research Initiative Maker Space Stream at The University of Texas at Austin. This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.
 
-Any user of this code does so at their own risk. Members of the Maker Space Stream, FRI, and The University of Texas system are not liable for anything related to this code.
+    Any user of this code does so at their own risk. Members of the Maker Space Stream, FRI, and The University of Texas system are not liable for anything related to this code.
 
-THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
+    THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
 
-Authors in chronological order of contribution:
-  Tim Riedel
-  Niam Kuttanna
-  [...]
+    Authors in chronological order of contribution:
+      Tim Riedel
+      Niam Kuttanna
+      [...]
 
-Further Information:
-  http://cns.utexas.edu/fri
+    Further Information:
+      http://cns.utexas.edu/fri
 
-Brief summary of this code: [...]
+    Brief summary of this code: [...]
 
-Known issues: [...]
+    Known issues: [...]
 
-https://www.w3schools.com/w3css/default.asp
-https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
--->
-
-  <!--Formatting source information and webpage title.-->
-  <head>
+    https://www.w3schools.com/w3css/default.asp
+    https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
+    -->
     <title>APP NAME GOES HERE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -31,9 +29,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     <link rel="stylesheet" href="w3-colors-flat.css">
     <style>  
         .body {
-             margin: 0 auto;
+            margin: 0 auto;
         }
-    
+
         .page {
             width: 100vw;
             height: 100vh;
@@ -44,16 +42,38 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
             z-index: 0;
             background-color: hsl(0,0%,100%);
         }
-    
+
         .page:target {
             left: 0vw;
             z-index: 1;
         }
     </style>
-  </head>
 
-  <!--Main HTML body section.-->
-  <body>
+    <script>
+        function redirectToPage() {
+            var selectedOption = document.querySelector('input[name="sw_fan"]:checked');
+
+            if(selectedOption) {
+                var selectedValue = selectedOption.value;
+
+                if(selectedValue === "YES") {
+                    window.location.href = "#YES"; // Redirect to the next question
+                } else {
+                    window.location.href = "NO.html"; // Redirect to a page for non-Star Wars fans
+                }
+            } else {
+                alert("Please select an option.");
+            }
+        }
+
+        function askAnotherQuestion() {
+            alert("Here's another question for you!"); // You can replace this alert with any other UI element or action
+            // Add more code here to ask another question or perform another action
+        }
+    </script>
+</head>
+
+<body>
     <!--Landing page content.-->
     <div id="content" class="w3-container">
         <!--Header-->
@@ -102,33 +122,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         </form>
     </div>
 
-    <!--JavaScript code-->
-    <script>
-        function redirectToPage() {
-            var selectedOption = document.querySelector('input[name="sw_fan"]:checked');
-
-            if(selectedOption) {
-                var selectedValue = selectedOption.value;
-
-                if(selectedValue === "YES") {
-                    window.location.href = "#YES"; // Redirect to the next question
-                } else {
-                    window.location.href = "NO.html"; // Redirect to a page for non-Star Wars fans
-                }
-            } else {
-                alert("Please select an option.");
-            }
-        }
-
-        function askAnotherQuestion() {
-            alert("Here's another question for you!"); // You can replace this alert with any other UI element or action
-            // Add more code here to ask another question or perform another action
-        }
-    </script>
-
     <!--Footer-->
     <footer class="w3-bottom w3-container w3-flat-carrot">
         <p>YOUR NAME (or anything you want) HERE</p>
     </footer>
-  </body>
+</body>
 </html>
