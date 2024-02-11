@@ -81,11 +81,12 @@
            if (jediCount > sithCount) 
            {
                resultText.textContent = "You are a Jedi! You will defend the galaxy against the Sith and Galactic Empire!";
-
+//projects this text if jedi counts is higher
            } 
            else if (sithCount > jediCount) 
            {
                resultText.textContent = "You are a Sith! You will rule across the stars and destroy the Rebellion!"
+//projects this text if sith counts is lower
            }
            resultPage.style.display = "block";
        }
@@ -94,7 +95,7 @@
                 jediCount = 0;
                 sithCount = 0;
             }
-      
+      //resets variables function when user completes form and returns to home page
     </script>
 </head>
 
@@ -138,6 +139,7 @@
             <a href="#two" onclick="jediAdd();" class="w3-btn w3-grey w3-round"> YES </a>
             <a href="#two" onclick="sithAdd();" class="w3-btn w3-grey w3-round"> NO </a>
             <br><br>
+        <!---depending on which option you choose, the code will store the input and increment each choice to be restored at the end--->
             </center>
         </div>
         <center>
