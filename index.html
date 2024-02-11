@@ -34,86 +34,30 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
   
 
 <!--Javascript code.-->
-<script>
 
-
-	
-	
-	
-	var exampleVariable1 = 0;
-	var exampleVariable2 = 0;
-	var exampleVariable3 = 0;
-	
-	function exampleFunction1()
-	{
-		// Assigns values to existing variables based on user input. The parseFloat() function converts string values to numerical values.
-    		exampleVariable1 = parseFloat(document.getElementById("firstInputBox").value);
-    		exampleVariable2 = parseFloat(document.getElementById("secondInputBox").value);
-		
-		exampleVariable3 = exampleVariable1 + exampleVariable2;
-		
-		alert("You just ran an addition function!");
-		console.log("Addition function was run.");
-	}
-	
-	function exampleFunction2()
-	{
-		exampleVariable1 = parseFloat(document.getElementById("firstInputBox").value);
-    		exampleVariable2 = parseFloat(document.getElementById("secondInputBox").value);
-		
-		exampleVariable3 = exampleVariable1 * exampleVariable2;
-		
-		alert("You just ran a multiplication function!");
-		console.log("Multiplication function was run.");
-	}
-	
-	function exampleFunction3()
-	{
-		exampleVariable1 = parseFloat(document.getElementById("firstInputBox").value);
-    		exampleVariable2 = parseFloat(document.getElementById("secondInputBox").value);
-		
-		exampleVariable3 = exampleVariable1 ** exampleVariable2;
-		
-		alert("You just ran an exponent function!");
-		console.log("Exponent function was run.");
-	}
-	
-	function exampleResultsFunction()
-	{
-		document.getElementById("endResults").innerHTML = "Your final result is: " + exampleVariable3;
-		resetVariables();
-	}
-	
-	function resetVariables()
-	{
-		exampleVariable1 = 0;
-		exampleVariable2 = 0;
-		exampleVariable3 = 0;
-	}
-	
-	function insertImages()
-	{
-		exampleVariable1 = parseFloat(document.getElementById("firstInputBox").value);
-		exampleVariable2 = parseFloat(document.getElementById("secondInputBox").value);
-
-		<!-- keeps looping the operation of adding smileys and frownies until value is met
-		for(let index = 0; index < exampleVariable1; index++)
-		{
-			var smileyImage = document.createElement("img");
-			smileyImage.src = "https://i.imgur.com/jctdkSS.png";
-			document.getElementById("header3").appendChild(smileyImage);
-		}
-		for(let index2 = 0; index2 < exampleVariable2; index2++)
-		{
-			var frownyImage = document.createElement("img");
-			frownyImage.src = "https://i.imgur.com/dVUqrST.png";
-			document.getElementById("header3").appendChild(frownyImage);
-		}
-		document.getElementById("alternateContentText").innerHTML = "You inserted " + exampleVariable1 + " smiley faces and " + exampleVariable2 + " frowny faces!";
-
-	}
 </script>
   
+function redirectToPage() {
+	
+	var selectedOption = document.querySelector('input[name="choice"}:checked')
+
+	if(selectedOption) {
+	
+	var selectedValue = selectedOption.value;
+
+	if{selectedValue == "YES") }
+	window.location.href = "YES.html";
+	} else if(selectedValue === "NO") {
+	window.location.href = "NO.html";
+	} else {
+
+	}
+{ else }
+	alert("Please select an option.");
+
+</script>
+
+	
   
  
 <!--CSS webpage style/format settings.-->
@@ -172,12 +116,16 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
   <input type="radio" id="nah" name="sw_fan" value="NAH">
   <label for="nah">NAH</label><br>
   
-	<input type="submit" value="Submit">
+	<input type="submit" value="Submit" onclick="redirectToPage()>
 </form>
 
+	
   <center>
 
-
+<div id="YES" class="page">
+	<div id="yesPage" class="w3-container w3-flat-midnight-blue">
+		<h1>Good Choice!?</h1>
+	</div>
 
 	
 
