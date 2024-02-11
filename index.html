@@ -50,32 +50,22 @@
     </style>
 
     <script>
+       
         var yesCount = 0;
+        var noCount = 0;
+      
+        function jediAdd(){
+            jediCount = jediCount + 1 ;
 
-        function redirectToPage() {
-            var selectedOption = document.querySelector('input[name="sw_fan"]:checked');
-
-            if(selectedOption) {
-                var selectedValue = selectedOption.value;
-
-                if(selectedValue === "YES" || selectedValue === "NAH") {
-                    // Increment the count if the user selects "YES"
-                    if(selectedValue === "YES") {
-                        yesCount++;
-                    }
-                    window.location.href = "#YES"; // Redirect to the cat question page
-                } else {
-                    window.location.href = "NO.html"; // Redirect to a page for non-Star Wars fans
-                }
-            } else {
-                alert("Please select an option.");
-            }
         }
 
-        function askAnotherQuestion() {
-            alert("Here's another question for you!"); // You can replace this alert with any other UI element or action
-            // Add more code here to ask another question or perform another action
+        function sithAdd(){
+            sithCount = sithCount + 1;
+
         }
+            
+
+      
     </script>
 </head>
 
@@ -97,50 +87,41 @@
     <!--FIRST SUBPAGE-->
     <div id="one" class="page">
         <div id="header2" class="w3-container w3-flat-midnight-blue">
-            <h1>Do You Like Star Wars?</h1>
+            <h1>QUESTION 1</h1>
         </div>
 
-        <form action="/action_page.php">
-            <p>Are you a Star Wars Fan?</p>
-            <input type="radio" id="yes" name="sw_fan" value="YES">
-            <label for="yes">YES</label><br>
-            <input type="radio" id="nah" name="sw_fan" value="NAH">
-            <label for="nah">NAH</label><br>
-            
-            <input type="button" value="Submit" onclick="redirectToPage()">
-        </form>
-    </div>
+        <div id="content" class="w3-container">
+        
+            <p>Would you save this cat from a burning building?</p>
 
-    <!--SECOND SUBPAGE-->
-    <div id="YES" class="page">
-        <div id="yesPage" class="w3-container w3-flat-midnight-blue">
-            <h1>Good Choice!</h1>
-            <p>Count of "YES" selections: <span id="yesCountDisplay">0</span></p>
+            <a href="#two" onclick="jediAdd();" class="w3-btn w3-grey w3-round"> YES </a>
+            <a href="#two" onclick="sithAdd();" class="w3-btn w3-grey w3-round"> NO </a>
+        </div>
+</div>
+
+    <div id="two" class="page">
+        <div id="header3" class="w3-container w3-flat-midnight-blue">
+            <h2>QUESTION 2</h2>
         </div>
 
-        <form action="/action_page.php">
-            <p>Would you save a cat from a burning building?</p>
-            <input type="radio" id="yes2" name="save_cat" value="YES">
-            <label for="yes2">YES</label><br>
-            <input type="radio" id="nah2" name="save_cat" value="NO">
-            <label for="nah2">NO</label><br>
-            
-            <input type="button" value="Submit" onclick="askAnotherQuestion()">
-        </form>
-    </div>
+        <div id="content" class="w3-container">
 
-     <div id="NAH" class="page">
-        <div id="nahPage" class="w3-container w3-flat-midnight-blue">
-            <h1>Good Choice!</h1>
+            <p>Do you wear mostly light colors?</p>
+
+        <a href="#three" onclick="jediAdd();" class="w3-btn w3-grey w3-round"> YES </a>
+        <a href="#three" onclick="sithAdd();" class="w3-btn w3-grey w3-round"> NO </a>
         </div>
-
-        <form action="/action_page.php">
-            <p>Would you save a cat from a burning building?</p>
-            <input type="radio" id="yes2" name="save_cat" value="YES">
-            <label for="yes2">YES</label><br>
-            <input type="radio" id="nah2" name="save_cat" value="NO">
-            <label for="nah2">NO</label><br>
-            
-            <input type="button" value="Submit" onclick="askAnotherQuestion()">
-        </form>
+   
     </div>
+
+        
+ 
+
+                
+  
+    
+
+     
+   
+
+
