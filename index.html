@@ -50,6 +50,8 @@
     </style>
 
     <script>
+        var yesCount = 0;
+
         function redirectToPage() {
             var selectedOption = document.querySelector('input[name="sw_fan"]:checked');
 
@@ -57,7 +59,9 @@
                 var selectedValue = selectedOption.value;
 
                 if(selectedValue === "YES") {
-                    window.location.href = "#YES"; // Redirect to the next question
+                    // Increment the count if the user selects "YES"
+                    yesCount++;
+                    window.location.href = "#YES"; // Redirect to the cat question page
                 } else {
                     window.location.href = "NO.html"; // Redirect to a page for non-Star Wars fans
                 }
@@ -109,6 +113,7 @@
     <div id="YES" class="page">
         <div id="yesPage" class="w3-container w3-flat-midnight-blue">
             <h1>Good Choice!</h1>
+            <p>Count of "YES" selections: <span id="yesCountDisplay">0</span></p>
         </div>
 
         <form action="/action_page.php">
@@ -137,6 +142,11 @@
             <input type="button" value="Submit" onclick="askAnotherQuestion()">
         </form>
     </div>
+
+    <script>
+        // Update the count display
+        document.getElementById("yesCountDisplay").textContent = yesCount;
+    </script>
 
 </body>
 </html>
