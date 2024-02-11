@@ -29,189 +29,106 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="stylesheet" href="w3.css">
     <link rel="stylesheet" href="w3-colors-flat.css">
+    <style>  
+        .body {
+             margin: 0 auto;
+        }
+    
+        .page {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: -100vw;
+            overflow-y: auto;
+            z-index: 0;
+            background-color: hsl(0,0%,100%);
+        }
+    
+        .page:target {
+            left: 0vw;
+            z-index: 1;
+        }
+    </style>
   </head>
 
-  
+  <!--Main HTML body section.-->
+  <body>
+    <!--Landing page content.-->
+    <div id="content" class="w3-container">
+        <!--Header-->
+        <div id="header" class="w3-container w3-flat-midnight-blue">
+            <h1>Are you a Jedi or a Sith?</h1>
+        </div>
 
-<!--Javascript code.-->
+        <p>Take a simple quiz and find out if you will defend the Republic as a Jedi Knight, or wreak havoc on the galaxy as a Sith!</p>
 
-</script>
-  
-function redirectToPage() {
-	
-	var selectedOption = document.querySelector('input[name="choice"}:checked')
+        <a href="#one" class="w3-btn w3-grey w3-round">May the Force Be With You!</a>
 
-	if(selectedOption) {
-	
-	var selectedValue = selectedOption.value;
+        <p>Are you a good guy or a bad boy? Are you naughty or nice? Maybe you don't know. All I know is that Star Wars is the answer. So take the quiz. Do it!</p>
+    </div>
 
-	if{selectedValue == "YES") }
-	window.location.href = "YES.html";
-	} else if(selectedValue === "NO") {
-	window.location.href = "NO.html";
-	} else {
+    <!--FIRST SUBPAGE-->
+    <div id="one" class="page">
+        <div id="header2" class="w3-container w3-flat-midnight-blue">
+            <h1>Do You Like Star Wars?</h1>
+        </div>
 
-	}
-{ else }
-	alert("Please select an option.");
+        <form action="/action_page.php">
+            <p>Are you a Star Wars Fan?</p>
+            <input type="radio" id="yes" name="sw_fan" value="YES">
+            <label for="yes">YES</label><br>
+            <input type="radio" id="nah" name="sw_fan" value="NAH">
+            <label for="nah">NAH</label><br>
+            
+            <input type="button" value="Submit" onclick="redirectToPage()">
+        </form>
+    </div>
 
-</script>
+    <!--SECOND SUBPAGE-->
+    <div id="YES" class="page">
+        <div id="yesPage" class="w3-container w3-flat-midnight-blue">
+            <h1>Good Choice!</h1>
+        </div>
 
-	
-  
- 
-<!--CSS webpage style/format settings.-->
-<style>	
-.body {
-     margin: 0 auto;
-}
+        <form action="/action_page.php">
+            <p>Would you save a cat from a burning building?</p>
+            <input type="radio" id="yes2" name="save_cat" value="YES">
+            <label for="yes2">YES</label><br>
+            <input type="radio" id="nah2" name="save_cat" value="NO">
+            <label for="nah2">NO</label><br>
+            
+            <input type="button" value="Submit" onclick="askAnotherQuestion()">
+        </form>
+    </div>
 
-.page {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: -100vw;
-    overflow-y: auto;
-    z-index: 0;
-    background-color: hsl(0,0%,100%);
-}
+    <!--JavaScript code-->
+    <script>
+        function redirectToPage() {
+            var selectedOption = document.querySelector('input[name="sw_fan"]:checked');
 
-.page:target {
-    left: 0vw;
-    z-index: 1;
-}
-</style>
+            if(selectedOption) {
+                var selectedValue = selectedOption.value;
 
+                if(selectedValue === "YES") {
+                    window.location.href = "#YES"; // Redirect to the next question
+                } else {
+                    window.location.href = "NO.html"; // Redirect to a page for non-Star Wars fans
+                }
+            } else {
+                alert("Please select an option.");
+            }
+        }
 
+        function askAnotherQuestion() {
+            alert("Here's another question for you!"); // You can replace this alert with any other UI element or action
+            // Add more code here to ask another question or perform another action
+        }
+    </script>
 
-<!--Main HTML body section.-->
-<body>
-  <!--Landing page content.-->
-  <div id="content" class="w3-container">
-  	<!--Header!-->
-	<div id="header" class="w3-container w3-flat-midnight-blue">
-		<h1>Are you a Jedi or a Sith?</h1>
-	</div>
-	
-	  <p>Take a simple quiz and find out if you will defend the Republic as a Jedi Knight, or wreak havoc on the galaxy as a Sith!</p>
-	
-	  <a href="#one" class="w3-btn w3-grey w3-round">May the Force Be With You!</a>
-	
-	  <p>Are you a good guy or a bad boy? Are you naughty or nice? Maybe you don't know. All I know is that Star Wars is the answer. So take the quiz. Do it!</p>
-	  
-  
-
-
-<!--FIRST SUBPAGE-->
-<div id="one" class="page">
-	<div id="header2" class="w3-container w3-flat-midnight-blue">
-		<h1>Do You Like Star Wars?</h1>
-	</div>
-
-<form action="/action_page.php">
-  <p>Are you a Star Wars Fan?</p>
-  <input type="radio" id="yes" name="sw_fan" value="YES">
-  <label for="yes">YES</label><br>
-  <input type="radio" id="nah" name="sw_fan" value="NAH">
-  <label for="nah">NAH</label><br>
-  
-	<input type="submit" value="Submit" onclick="redirectToPage()>
-</form>
-
-	
-  <center>
-
-
-!--SECOND SUBPAGE-->
-<div id="YES" class="page">
-	<div id="yesPage" class="w3-container w3-flat-midnight-blue">
-		<h1>Good Choice!?</h1>
-	</div>
-
-<form action="/action_page.php">
-  <p>Would you save a cat, from a burning building??</p>
-  <input type="radio" id="yes" name="sw_fan" value="YES">
-  <label for="yes">YES</label><br>
-  <input type="radio" id="nah" name="sw_fan" value="NAH">
-  <label for="nah">NAH</label><br>
-  
-	<input type="submit" value="Submit" onclick="redirectToPage()>
-</form>
-
-	
-
- 
-	  
-	
-	
-	
-
-
-
-  
-
-
-
-
-  
-
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-<!--LAST SUBPAGE-->
-<div id="finalpage" class="page">
-	<div id="finalheader" class="w3-container w3-flat-carrot">
-		<h1>FINAL PAGE TITLE GOES HERE</h1>
-	</div>
-	
-  <center>
-    
-	  <div id="finalcontent" class="w3-container">
-		  <p id="endResults">FINAL PAGE CONTENT GOES HERE</p>
-	  </div>
-  
-  <a class="w3-btn w3-black" onclick="exampleResultsFunction();">Click me!
-    <br>
-    <img id="resultsButtonImg" src="https://i.imgur.com/rZOaHhx.png" width="30" alt="spongebob">
-  </a>
-  <a href="#content" onclick="resetVariables();" class="w3-btn w3-black">Return to Home Page</a>
-    
-  </center>
-</div>
-
-
-<!--This is the 4th Subpage.-->
-<div id="alternateheader" class="page">
-	<!--Header-->
-	<div id="alternateheader" class="w3-container w3-flat-carrot">
-		<h1>Alternate Page!/h1>
-	</div>
-
-	<!--Main content of the page.-->
-	
-	<center>
-	<div id="contentBox" class="w3-container">
-		<p id="alternateContentText">Placeholder text!</p>
-	</div>
-
-	<!--A link that runs a function when clicked and takes the user to a new page.-->
-	<a href="#content" onclick="resetVariables();" class"w3-btn w3-grey">Return to Home Page</a>
-	</center>
-</div>
-  
-  
-<!--Footer!-->
-<footer class="w3-bottom w3-container w3-flat-carrot">
-	<p>YOUR NAME (or anything you want) HERE</p>
-</footer>
-</div>
-
-</body>
+    <!--Footer-->
+    <footer class="w3-bottom w3-container w3-flat-carrot">
+        <p>YOUR NAME (or anything you want) HERE</p>
+    </footer>
+  </body>
 </html>
