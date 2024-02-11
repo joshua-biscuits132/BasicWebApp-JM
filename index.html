@@ -49,22 +49,37 @@
         }
     </style>
 
+    <!---JAVASCRIPT CODE--->
     <script>
        
-        var yesCount = 0;
-        var noCount = 0;
+        var jediCount = 0;
+        var sithCount = 0;
       
         function jediAdd(){
-            jediCount = jediCount + 1 ;
+            jediCount = jediCount + 1 ; //increments the jedi count +1 for every user inputted "yes"
 
         }
 
         function sithAdd(){
-            sithCount = sithCount + 1;
+            sithCount = sithCount + 1; //increments the sith count +1 for every user inputted "no"
 
         }
-            
 
+        function showResult(){
+            var resultPage = document.getElementById("six");
+            var resultText= document.getElementById("result");
+
+            if (jediCount > sithCount) {
+                resultText.textContent = "You are a Jedi! You will defend the galaxy against the Sith and the Galactic Empire!";
+            } else if (sithCount > jediCount){
+                    resultText.textContent = "You are a Sith! You will rule the Galaxy and lay waste to the Republic!";
+                }
+
+            resultPage.style.left = "Ovw";
+            resultPage.style.zIndex = "1";
+                }
+
+        showResult();
       
     </script>
 </head>
@@ -99,9 +114,10 @@
         </div>
 </div>
 
+    <!---SECOND SUBPAGE--->
     <div id="two" class="page">
         <div id="header3" class="w3-container w3-flat-midnight-blue">
-            <h2>QUESTION 2</h2>
+            <h1>QUESTION 2</h1>
         </div>
 
         <div id="content" class="w3-container">
@@ -114,7 +130,65 @@
    
     </div>
 
-        
+
+    <!---THIRD SUBPAGE--->
+    <div id="three" class="page">
+        <div id="header4" class="w3-container w3-flat-midnight-blue">
+            <h1>QUESTION 3</h1>
+        </div>
+
+        <div id="content" class="w3-container">
+
+            <p>Would you listen to punk rock over Taylor Swift?</p>
+
+        <a href="#four" onclick="sithAdd();" class="w3-btn w3-grey w3-round"> YES </a>
+        <a href="#four" onclick="jediAdd();" class="w3-btn w3-grey w3-round"> NO </a>
+        </div>
+   
+    </div>
+
+    <!---FOURTH SUBPAGE--->
+     <div id="four" class="page">
+        <div id="header5" class="w3-container w3-flat-midnight-blue">
+            <h1>QUESTION 4</h1>
+        </div>
+
+        <div id="content" class="w3-container">
+
+            <p>Would you father this young child?</p>
+
+        <a href="#five" onclick="jediAdd();" class="w3-btn w3-grey w3-round"> YES </a>
+        <a href="#five" onclick="sithAdd();" class="w3-btn w3-grey w3-round"> NO </a>
+        </div>
+   
+    </div>
+
+    <!---FIFTH SUBPAGE--->
+     <div id="five" class="page">
+        <div id="header6" class="w3-container w3-flat-midnight-blue">
+            <h1>FINAL QUESTION</h1>
+        </div>
+
+        <div id="content" class="w3-container">
+
+            <p>Do you give up your seat for this old lady</p>
+
+        <a href="#six" onclick="jediAdd();" class="w3-btn w3-grey w3-round"> YES </a>
+        <a href="#six" onclick="sithAdd();" class="w3-btn w3-grey w3-round"> NO </a>
+        </div>
+   
+    </div>
+
+    <!---SIXTH SUBPAGE--->
+    <div id="six" class="page">
+        div id="header7" class="w3-flat-midnight-blue"
+        <h1>RESULT</h1>
+    </div>
+
+    <div id="content" class="w3-content">
+        <p id="result"></p>
+    </div>
+</div>
  
 
                 
